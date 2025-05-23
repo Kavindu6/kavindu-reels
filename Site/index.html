@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kavindu Weerasuriya | Reels Showcase</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Raleway', sans-serif;
+      background-color: #000000;
+      color: #f5f5f5;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    header {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 0 40px;
+      user-select: none;
+    }
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: -1;
+      opacity: 0.6; /* 60% visibility */
+    }
+    .video-background iframe {
+      width: 100vw;
+      height: 56.25vw;
+      min-height: 100vh;
+      min-width: 177.77vh;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      filter: brightness(0.15) contrast(1.2);
+    }
+    #logo {
+      width: 100px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+    #logo:hover {
+      opacity: 0.8;
+    }
+    header h1 {
+      font-size: 3.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #ffffff;
+      margin-bottom: 10px;
+      text-align: center;
+      z-index: 1;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #ffcc00; /* yellow */
+      margin-bottom: 40px;
+      text-align: center;
+      z-index: 1;
+    }
+    .reels-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+      z-index: 1;
+    }
+    .reel-card {
+      background: #1a1a1a;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s ease;
+      color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #333333;
+    }
+    .reel-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 40px rgba(255, 255, 255, 0.15);
+    }
+    .reel-card img {
+      width: 100%;
+      display: block;
+      border-bottom: 1px solid #333333;
+      object-fit: cover;
+      height: 180px;
+      filter: brightness(0.9);
+      transition: filter 0.3s ease;
+    }
+    .reel-card:hover img {
+      filter: brightness(1);
+    }
+    .reel-content {
+      padding: 16px 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .reel-content h3 {
+      margin-bottom: 6px;
+      font-size: 1.1rem;
+      color: #ffffff;
+      text-align: center;
+    }
+    .reel-content p {
+      font-size: 0.9rem;
+      color: #bbbbbb;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .reel-content a {
+      color: #ffcc00; /* yellow */
+      text-decoration: none;
+      font-weight: 600;
+      align-self: center;
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s ease;
+      padding: 6px 20px;
+      border-radius: 9999px;
+      border: 1px solid #ffcc00;
+      user-select: none;
+    }
+    .reel-content a:hover {
+      background: #ffcc00;
+      color: #000000;
+      border-color: #ffcc00;
+    }
+    footer {
+      background: #0d0d0d;
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 0.9rem;
+      color: #555555;
+      width: 100%;
+      margin-top: auto;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      header p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+      }
+      .reel-card img {
+        height: 140px;
+      }
+    }
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      header p {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+      }
+      .reel-card img {
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="video-background">
+      <iframe
+        src="https://www.youtube.com/embed/qYqqfz--gW4?autoplay=1&mute=1&loop=1&playlist=qYqqfz--gW4&controls=0&showinfo=0&modestbranding=1&iv_load_policy=3&rel=0"
+        frameborder="0"
+        allow="autoplay; fullscreen"
+        allowfullscreen
+        title="Background Video"
+      ></iframe>
+    </div>
+
+    <!-- Logo with hover image swap -->
+    <img
+      id="logo"
+      src="Media/img/logo1.png"
+      alt="Kavindu Weerasuriya Logo"
+      style="cursor:pointer;"
+    />
+
+    <h1>Kavindu Weerasuriya</h1>
+    <p>Visual Artist & Content Creator</p>
+
+    <div class="reels-container">
+      <div class="reel-card">
+        <img src="Media/img/Reel1.png" alt="Happiness :)" />
+        <div class="reel-content">
+          <h3>Happiness :)</h3>
+          <p>Views: 667 | Likes: 28 | Comments: 8</p>
+          <a href="https://www.instagram.com/reel/DDXoYtNu03R/?igsh=MTIxa3Z5bTBxb3ljdg==" target="_blank" rel="noopener noreferrer">Play</a>
+        </div>
+      </div>
+      <div class="reel-card">
+        <img src="Media/img/Reel2.png" alt="Food v1.0" />
+        <div class="reel-content">
+          <h3>Food v1.0</h3>
+          <p>Views: 425 | Likes: 16 | Comments: 4</p>
+          <a href="https://www.instagram.com/reel/DBY9YpbtsZf/?igsh=MW44eTN2aTg5cW9jYQ==" target="_blank" rel="noopener noreferrer">Play</a>
+        </div>
+      </div>
+      <div class="reel-card">
+        <img src="Media/img/Reel3.png" alt="Food v1.1" />
+        <div class="reel-content">
+          <h3>Food v1.1</h3>
+          <p>Views: 751 | Likes: 34 | Comments: 4</p>
+          <a href="https://www.instagram.com/reel/DES-tPZOb8p/?igsh=MXJ1dmVmaHhnend6dQ==" target="_blank" rel="noopener noreferrer">Play</a>
+        </div>
+      </div>
+      <div class="reel-card">
+        <img src="Media/img/Reel4.png" alt="Me" />
+        <div class="reel-content">
+          <h3>Me</h3>
+          <p>Views: 658 | Likes: 28 | Comments: 6</p>
+          <a href="https://www.instagram.com/reel/C5TjQdCMpQx/?igsh=N2R5Z3Q1bXhrOGNv" target="_blank" rel="noopener noreferrer">Play</a>
+        </div>
+      </div>
+      <div class="reel-card">
+        <img src="Media/img/Reel5.png" alt="AfterReel" />
+        <div class="reel-content">
+          <h3>AfterReel</h3>
+          <p>Views: 1 | Likes: 1 | Comments: 1</p>
+          <a href="https://www.instagram.com/reel/DJguhZVMgQy/?igsh=MXVqdWVjc25tOThycw==" target="_blank" rel="noopener noreferrer">Play</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <footer>
+    &copy; 2025 Kavindu Weerasuriya. All rights reserved.
+  </footer>
+
+  <script>
+    // Logo click redirects to your Instagram
+    const logo = document.getElementById('logo');
+    logo.addEventListener('click', () => {
+      window.open('https://www.instagram.com/kavindu.weerasuriya?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank');
+    });
+
+    // Hover swap for logo image
+    const originalLogo = 'Media/img/logo1.png';
+    const hoverLogo = 'Media/img/logo2.png'; // Replace with your hover logo path
+
+    logo.addEventListener('mouseenter', () => {
+      logo.src = hoverLogo;
+    });
+    logo.addEventListener('mouseleave', () => {
+      logo.src = originalLogo;
+    });
+  </script>
+</body>
+</html>
